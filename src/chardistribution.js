@@ -243,7 +243,7 @@ jschardet.SJISDistributionAnalysis = function() {
             return -1;
         }
         order += aStr.charCodeAt(1) - 0x40;
-        if( aStr.charCodeAt(1) > 0x7F ) {
+        if( aStr.charCodeAt(1) < 0x40 || aStr.charCodeAt(1) === 0x7F || aStr.charCodeAt(1) > 0xFC) {
             order = -1;
         }
         return order;
